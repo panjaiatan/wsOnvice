@@ -1,0 +1,20 @@
+<ion-view view-title="Users">
+  <ion-content class="padding">
+    <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="showData()">
+          </ion-refresher>
+       <div class="list">
+              <a class="item item-icon-center item-balanced" href="#/tab/users/addUser">
+                <i class="icon ion-person-stalker"></i>
+                    Add Users
+              </a>
+       </div>
+    <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="user in data" href="#/tab/users/{{user.id}}">
+        <h2>{{user.username}}</h2>
+        <p>{{user.email}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

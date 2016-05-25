@@ -1,0 +1,57 @@
+
+<ion-view view-title="User Detail">
+<ion-content class="padding" ng-repeat="user in data">
+</ion-header-bar>
+    <h3>User detail :</h3>
+    <p>
+        <font size="4" color="Black" >Username : {{user.username}}</font>
+    <br>
+        <font size="4" color="Black" >Password : {{user.password}}</font>
+    <br>
+        <font size="4" color="Black" >Email : {{user.email}}</font>
+    <br>
+        <font size="4"  color="Black" >Number Phone : {{user.no_telp}}</font>
+    </p>
+    <button class="button button-balanced button-block" ng-click="editModal()">Edit User</button>
+    <button class="button button-assertive button-block" ng-click="delete(id)">Delete</button>
+</ion-content>
+<script id="edit.html" type="text/ng-template">
+        <div class="modal">
+            <ion-header-bar class="bar-stable">
+                <h1 class="title"> Edit User</h1>
+            </ion-header-bar>
+            <ion-content ng-repeat="user in data">
+                <form>
+                    <div class="list">
+                        <label class="item item-input">
+                        <span class="input-label">ID :</span>
+                            <input type="text" placeholder="{{user.id}}" ng-model="id" value="{{user.id}}" init-from-form />
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Username :</span>
+                            <input type="text" placeholder="{{user.username}}" ng-model="username" value="{{user.username}}" init-from-form />
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Password :</span>
+                            <input type="text" placeholder="{{user.password}}" ng-model="password" value="{{user.password}}" init-from-form />
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Email :</span>
+                            <input type="text" placeholder="{{user.email}}" ng-model="email" value="{{user.email}}" init-from-form />
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Number Phone :</span>
+                            <input type="text" placeholder="{{user.no_telp}}" ng-model="no_telp" value="{{user.no_telp}}" init-from-form>
+                        </label>
+                        <button class="button button-positive button-block" ng-click="edit(id,username,password,email,no_telp);">
+                            Save
+                        </button>
+                         <button class="button button-balanced button-block" ng-click="backModal()">
+                            Back
+                        </button>
+                    </div>
+                </form>
+        </ion-content>
+        </div>
+</script>
+</ion-view>
