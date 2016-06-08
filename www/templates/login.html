@@ -1,3 +1,21 @@
-
+<ion-view view-title="OnVice App">
+    <ion-content>
+        <br /><br /><br /><br /><br />
+        <div class="list">
+            <form name="form" class="padding">
+                <label class="item item-input">
+                    <input ng-model="login.username" type="text" placeholder="Username" required>
+                </label>
+                <label class="item item-input">
+                    <input ng-model="login.password" type="password" placeholder="Password" required>
+                </label>
+                <div class="padding">
+                    <button class="button button-block button-outline button-balanced" ng-click="login()" ng-disabled="form.$invalid">Login</button>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
+ 
  
 

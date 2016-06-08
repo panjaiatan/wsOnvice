@@ -1,0 +1,23 @@
+<ion-view view-title="Add Users">
+<ion-content class="padding">
+         <form>
+        <ion-list>
+            <label class="item item-input">
+                <input type="text" ng-model="Add.username" placeholder="Username">
+            </label>
+            <label class="item item-input">
+                <input type="text" ng-model="Add.password" placeholder="Password">
+            </label>
+            <label class="item item-input">
+                <input type="text" ng-model="Add.email" placeholder="Email">
+            </label>
+            <label class="item item-input">
+                <input type="text" ng-model="Add.notelp" placeholder="Nomor Telpon">
+            </label>
+
+            </ion-list>
+        <div class="spacer" style="height: 5px;"></div>
+        <button class="button icon ion-person-stalker button-balanced button-block" ng-click="save();"> Save</button>
+    </form>
+</ion-content>
+</ion-view>
