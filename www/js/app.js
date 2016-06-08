@@ -22,7 +22,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   });
 })
-
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -55,8 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-
-  .state('tab.chats', {
+.state('tab.chats', {
       url: '/chats',
       views: {
         'tab-chats': {
@@ -65,4 +63,58 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+    
+    .state('tab.chat-detail', {
+      url: '/chats/:chatId',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/chat-detail.html',
+          controller: 'ChatDetailCtrl'
+        }
+      }
+    })
+
+  .state('tab.lamp', {
+    url: '/lamp',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/tab-lamp.html',
+        controller: 'lamp'
+      }
+    }
+  })
   
+  .state('tab.users',{
+    url: '/users',
+    views: {
+      'tab-users':{
+        templateUrl: 'templates/users.html',
+        controller: 'Users'
+      }
+    }
+  })
+  
+      .state('tab.users-addUsers', {
+      url: '/users/addUser',
+      views: {
+        'tab-users': {
+          templateUrl: 'templates/addUser.html',
+          controller: 'addUser'
+        }
+      }
+    })
+    
+    .state('tab.users-detail', {
+      url: '/users/:userid',
+      views: {
+        'tab-users': {
+          templateUrl: 'templates/user-detail.html',
+          controller: 'UserDetail'
+        }
+      }
+    })
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/login');
+
+});
