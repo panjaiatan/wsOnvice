@@ -18,6 +18,7 @@ angular.module('starter.controllers', [])
     $scope.login = function(){
         Users.login($scope.login).then(function(data){
             if (Object.keys(data.data).length === 1) {
+                $scope.login = "",
                 $state.go('tab.lamp');
             } else {
                 $ionicPopup.alert({
@@ -30,17 +31,3 @@ angular.module('starter.controllers', [])
         })
     }
 })
-
-.controller('lamp', function($scope, $ionicPopup, lamp) {
-  $scope.showAlert = function(msg) {
-      $ionicPopup.alert({
-          title: msg.title,
-          template: msg.message,
-          okText: 'Ok',
-          okType: 'button-positive'
-      });
-    };
-  
- 
-        
-
